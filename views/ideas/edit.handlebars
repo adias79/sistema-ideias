@@ -1,0 +1,11 @@
+<div class="idea-form-container">
+    <a href="/ideas/idealize">Voltar</a>
+    <h1>Alterar</h1>
+    <form action="/ideas/edit" method="POST">
+        <input type="hidden" name="id" value="{{idea.id}}">
+        <div class="form-control">
+            <textarea name="description" rows="3" placeholder="Escreva aqui a sua ideia...">{{idea.description}}</textarea>
+        </div>
+        <input type="submit" value="Salvar"> 
+    </form>
+</div>

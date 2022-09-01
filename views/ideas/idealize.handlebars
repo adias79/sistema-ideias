@@ -1,0 +1,24 @@
+<div class="idealize">
+    <div class="description-container">
+        <h1>Minhas ideias</h1>
+        <a href="/ideas/add" class="btn">Adicionar</a>
+    </div>
+    {{#if ideas}}
+    <ul>
+        {{#each ideas}}
+            <li>
+                <span class="label">{{this.description}}</span>
+                <span class="actions">
+                    <a href="/ideas/edit/{{this.id}}" class="btn">Alterar</a>
+                    <form action="/ideas/remove" method="POST">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <input type="submit" value="Excluir" class="btn">
+                    </form>
+                </span>
+            </li>
+        {{/each}}
+    </ul>
+    {{else}}
+        <p>Você ainda não tem nenhuma ideia.</p>
+    {{/if}}
+</div>
